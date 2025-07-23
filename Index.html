@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安兹自媒体传媒 | 领先的数字内容提供商</title>
+    <title>安兹自媒体传媒 | 安详中国，兹润天等</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* 全局变量与重置 */
@@ -139,6 +139,586 @@
             gap: 30px;
             max-width: 650px;
             padding: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--secondary-orange);
+            text-shadow: 0 0 15px rgba(255, 159, 67, 0.6);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 15px rgba(214, 48, 49, 0.6);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-orange);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--secondary-orange);
+            box-shadow: 0 0 15px rgba(255, 159, 67, 0.6);
+        }
+        
+        /* 频道部分样式 */
+        .section-title {
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-red), var(--secondary-orange));
+            border-radius: 10px;
+        }
+        
+        .channels {
+            padding: 100px 0;
+        }
+        
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .channel-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .channel-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .channel-icon {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .general .channel-icon {
+            color: #ff6b6b;
+        }
+        
+        .animation .channel-icon {
+            color: #48dbfb;
+        }
+        
+        .news .channel-icon {
+            color: #feca57;
+        }
+        
+        .channel-card h3 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .channel-card p {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 25px;
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        /* 安兹百科部分 */
+        .anzswiki {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .wiki-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .wiki-content {
+            flex: 1;
+        }
+        
+        .wiki-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .wiki-box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(145deg, var(--primary-red), var(--dark-red));
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: rotate(-5deg);
+        }
+        
+        .wiki-box::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(145deg, #ff9f43, #ff7b47);
+            border-radius: 20px;
+            z-index: -1;
+            animation: rotateGradient 15s linear infinite;
+        }
+        
+        .wiki-box span {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature i {
+            color: var(--secondary-orange);
+            font-size: 1.8rem;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background: var(--accent-black);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-red);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-orange);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-red);
+            transform: translateY(-5px);
+        }
+        
+        /* 动画效果 */
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 响应式设计 */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        @media screen and (max-width: 992px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .wiki-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+            }
+            
+            nav.active ul {
+                display: flex;
+            }
+            
+            .hero-content {
+                padding: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .channels-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .wiki-box {
+                width: 250px;
+                height: 250px;
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-text">安兹<span>自媒体传媒</span></div>
+            </div>
+            <nav id="navbar">
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#channels">直播频道</a></li>
+                    <li><a href="#anzswiki">安兹百科</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系方式</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero部分 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="glass hero-content">
+                <h1><span>安详中国，兹润天等</span></h1>
+                <p>安兹自媒体传媒是位于广西壮族自治区崇左市的一个个人自媒体工作室，于2023年创建。现定位为“新闻资讯至上，娱乐动漫为副”。</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#channels" class="btn">网络频道</a>
+                    <a href="#anzswiki" class="btn btn-secondary">访问百科</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 直播频道部分 -->
+    <section class="channels" id="channels">
+        <div class="container">
+            <h2 class="section-title">我们的直播频道</h2>
+            <div class="channels-grid">
+                <div class="glass channel-card general">
+                    <div class="channel-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>安兹综合频道</h3>
+                    <p>提供全方位的内容体验，涵盖生活、科技、文化和娱乐。多样化节目满足所有观众需求，从新闻资讯到娱乐八卦。</p>
+                    <a href="https://livescope.tv/room/Anzs1Channel" class="btn" style="width: fit-content; margin: 0 auto;">进入频道</a>
+                </div>
+                
+                <div class="glass channel-card animation">
+                    <div class="channel-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>安兹波球动画频道</h3>
+                    <p>专为波兰球爱好者打造，提供国内外各大UP主制作的波兰球动画，更是各大社团新闻的聚集地。满足你的波圈之梦。</p>
+                    <a href="https://livescope.tv/room/PBchannel" class="btn" style="width: fit-content; margin: 0 auto;">进入频道</a>
+                </div>
+                
+                <div class="glass channel-card news">
+                    <div class="channel-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>安兹新闻频道</h3>
+                    <p>播报全省、全国、乃至全球新闻事件。专业播报，带来第一手新闻资讯和深度评论分析。</p>
+                    <a href="https://livescope.tv/room/AnzsNews" class="btn" style="width: fit-content; margin: 0 auto;">进入频道</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安兹百科部分 -->
+    <section class="anzswiki" id="anzswiki">
+        <div class="container">
+            <h2 class="section-title">安兹百科</h2>
+            <div class="glass" style="padding: 40px;">
+                <div class="wiki-container">
+                    <div class="wiki-content">
+                        <h3 style="color: white; font-size: 2rem; margin-bottom: 20px;">知识共享，智慧互联</h3>
+                        <p style="color: rgba(255,255,255,0.85); margin-bottom: 30px;">
+                            AnzsWiki是安兹自媒体传媒旗下的开放百科全书项目，旨在最终目标为创建最大最全面的多语种知识库。我们秉承自由、开放、协作的理念，邀请所有用户参与知识共建。
+                        </p>
+                        <p style="color: rgba(255,255,255,0.85); margin-bottom: 30px;">
+                            当前平台正在公测，仅拥有25词条。但我们依旧相信，广大的群众注定让这个新生的Wiki勃勃生机，万物竞发！
+                        </p>
+                        
+                        <div class="features">
+                            <div class="glass feature">
+                                <i class="fas fa-edit"></i>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 5px;">开放编辑</h4>
+                                    <p style="color: rgba(255,255,255,0.8);">任何人都可以参与词条创建与修改</p>
+                                </div>
+                            </div>
+                            <div class="glass feature">
+                                <i class="fas fa-book"></i>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 5px;">专业内容</h4>
+                                    <p style="color: rgba(255,255,255,0.8);">权威来源确保内容准确可靠</p>
+                                </div>
+                            </div>
+                            <div class="glass feature">
+                                <i class="fas fa-sync-alt"></i>
+                                <div>
+                                    <h4 style="color: white; margin-bottom: 5px;">实时更新</h4>
+                                    <p style="color: rgba(255,255,255,0.8);">热点内容即时更新，保持新鲜</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://anzswiki.miraheze.org" class="btn" style="margin-top: 40px;">访问 AnzsWiki</a>
+                    </div>
+                    <div class="wiki-visual">
+                        <div class="wiki-box">
+                            Anzs<span>Wiki</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚部分 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                        安兹自媒体传媒成立于2023年，致力于打造高质量的数字化媒体内容和平台服务。我们的愿景是成为每个人数字生活中不可或缺的伙伴。
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-bilibili"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="https://livescope.tv/space/AnzsMeMidea">直播频道</a></li>
+                        <li><a href="https://anzswiki.miraheze.org">安兹百科</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>我们的频道</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://livescope.tv/room/Anzs1Channel">安兹综合频道</a></li>
+                        <li><a href="https://livescope.tv/room/PBchannel">安兹波球动画频道</a></li>
+                        <li><a href="https://livescope.tv/room/AnzsNews">安兹新闻频道</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 崇左市天等县</li>
+                        <li><i class="fas fa-phone"></i> 400-123-4567</li>
+                        <li><i class="fas fa-envelope"></i> luningkun@88.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 安兹自媒体传媒. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+        // 滚动效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // 关闭移动端菜单
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
         }
         
         .hero h1 {
